@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+// Mengarahkan rute awal ke halaman home
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// Rute autentikasi
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Rute untuk halaman dashboard admin, hanya bisa diakses oleh pengguna yang terautentikasi
