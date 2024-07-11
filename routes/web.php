@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PemesanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,16 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Mengarahkan rute awal ke halaman home
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Rute autentikasi
 Auth::routes();
 
-// Rute untuk halaman dashboard admin, hanya bisa diakses oleh pengguna yang terautentikasi
+// Mengarahkan rute awal ke halaman home
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/pemesan', [PemesanController::class, 'index']);
+Route::post('/pemesan/store/', [PemesanController::class, 'store']);
+Route::get('/pemesan/form/', [PemesanController::class, 'create']);
+Route::get('/pemesan/edit/{id}', [PemesanController::class, 'edit']);
+Route::put('/pemesan/{id}', [PemesanController::class, 'update']);
+Route::delete('/pemesan/{id}', [PemesanController::class, 'destroy']);
+
