@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PemesanController;
 use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\JenisMobilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,10 @@ Route::post('/petugas/store/', [PetugasController::class, 'store']);
 Route::get('/petugas/edit/{id}', [PetugasController::class, 'edit']);
 Route::put('/petugas/{id}', [PetugasController::class, 'update']);
 Route::delete('/petugas/{id}', [PetugasController::class, 'destroy']);
+
+Route::get('/jenismobil', [JenisMobilController::class, 'index']);
+Route::get('/jenismobil/form/', [JenisMobilController::class, 'create']);
+Route::post('/jenismobil/store/', [JenisMobilController::class, 'store']);
+Route::get('/jenismobil/edit/{id}', [JenisMobilController::class, 'edit']);
+Route::put('/jenismobil/{id}', [JenisMobilController::class, 'update']);
+Route::delete('/jenismobil/{id}', [JenisMobilController::class, 'destroy']);

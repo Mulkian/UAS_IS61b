@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('jenismobil', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_mobil');
+            
             $table->string('tipe_mobil');
             $table->string('tahun_mobil');
 

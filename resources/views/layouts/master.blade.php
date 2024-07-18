@@ -61,7 +61,7 @@
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="html/index-invest.html" class="nk-menu-link">
+                                    <a href="jenismobil" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon fa fa-car"></em></span>
                                         <span class="nk-menu-text">Jenis Mobil</span>
                                     </a>

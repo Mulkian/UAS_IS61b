@@ -52,7 +52,7 @@ class PemesanController extends Controller
     }
     public function destroy(string $id)
     {
-        //
+        
         $pem = Pemesan::find($id);
         $pem->delete();
 
