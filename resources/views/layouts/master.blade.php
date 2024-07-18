@@ -43,13 +43,13 @@
                                     <h6 class="overline-title text-primary-alt">Dashboards</h6>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="html/index.html" class="nk-menu-link">
+                                    <a href="pemesan" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-user"></em></span>
                                         <span class="nk-menu-text">Pemesan</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="html/index-crypto.html" class="nk-menu-link">
+                                    <a href="petugas" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon fa fa-user-tie"></em></span>
                                         <span class="nk-menu-text">Petugas</span >
                                     </a>
@@ -64,6 +64,19 @@
                                     <a href="html/index-invest.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon fa fa-car"></em></span>
                                         <span class="nk-menu-text">Jenis Mobil</span>
+                                    </a>
+
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/index-analytics.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon fas fa-pen"></em></span>
+                                        <span class="nk-menu-text">Syarat Sewa</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/index-analytics.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon fas fa-door-open"></em></span>
+                                        <span class="nk-menu-text">Pengembalian Mobil</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                             </ul><!-- .nk-menu -->

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PemesanController;
+use App\Http\Controllers\PetugasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,11 @@ Route::get('/pemesan/edit/{id}', [PemesanController::class, 'edit']);
 Route::put('/pemesan/{id}', [PemesanController::class, 'update']);
 Route::delete('/pemesan/{id}', [PemesanController::class, 'destroy']);
 
+
+
+Route::get('/petugas', [PetugasController::class, 'index']);
+Route::get('/petugas/form/', [PetugasController::class, 'create']);
+Route::post('/petugas/store/', [PetugasController::class, 'store']);
+Route::get('/petugas/edit/{id}', [PetugasController::class, 'edit']);
+Route::put('/petugas/{id}', [PetugasController::class, 'update']);
+Route::delete('/petugas/{id}', [PetugasController::class, 'destroy']);
