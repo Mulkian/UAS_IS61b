@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('jenismobil', function (Blueprint $table) {
             $table->id();
-            
+
             $table->string('tipe_mobil');
             $table->string('tahun_mobil');
+            $table->string('warna_mobil');
+            $table->string('plat_nomor');
+
+
 
 
             $table->timestamps();

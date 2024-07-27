@@ -32,7 +32,9 @@ class JenisMobilController extends Controller
         $jen = new JenisMobil;
 
         $jen->tipe_mobil = $request->tipe_mobil;
-        $jen->tahun_mobil= $request->tahun_mobil;
+        $jen->tahun_mobil = $request->tahun_mobil;
+        $jen->warna_mobil = $request->warna_mobil;
+        $jen->plat_nomor = $request->plat_nomor;
 
 
         $jen->save();
@@ -64,9 +66,13 @@ class JenisMobilController extends Controller
     {
         $jen = JenisMobil::find($id);
         $jen->tipe_mobil = $request->tipe_mobil;
-        $jen->tahun_mobil = $request->tahun_mobil;
+        $jen->tahun_mobil= $request->tahun_mobil;
+        $jen->warna_mobil = $request->warna_mobil;
+        $jen->plat_nomor= $request->plat_nomor;
 
         $jen->save();
+
+        return redirect ('/jenismobil/');
     }
 
     /**

@@ -17,6 +17,16 @@
                     <label for="exampleInputPassword1" class="form-label">Tahun Mobil</label>
                     <input type="text" name="tahun_mobil" class="form-control" id="exampleInputPassword1">
                 </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">warna Mobil</label>
+                    <input type="text" name="warna_mobil" class="form-control" id="exampleInputPassword1">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Plat Mobil</label>
+                    <input type="text" name="plat_nomor" class="form-control" id="exampleInputPassword1">
+                </div>
 
 
                 <button type="submit" class="btn btn-primary">Tambah Data</button>

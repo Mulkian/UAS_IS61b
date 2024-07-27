@@ -47,18 +47,20 @@
                                         <span class="nk-menu-icon"><em class="icon ni ni-user"></em></span>
                                         <span class="nk-menu-text">Pemesan</span>
                                     </a>
+
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="petugas" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon fa fa-user-tie"></em></span>
-                                        <span class="nk-menu-text">Petugas</span >
-                                    </a>
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
-                                    <a href="html/index-analytics.html" class="nk-menu-link">
+                                    <a href="pemesanan" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-cart"></em></span>
-                                        <span class="nk-menu-text">Pemesanan</span>
+                                        <span class="nk-menu-text">Pemesanan Harian</span>
                                     </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="jenismobil" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-cart"></em></span>
+                                        <span class="nk-menu-text">Pemesanan paket</span>
+                                    </a>
+
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="jenismobil" class="nk-menu-link">
@@ -67,10 +69,7 @@
                                     </a>
 
                                 </li>
-                                <li class="nk-menu-item">
-                                    <a href="html/index-analytics.html" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon fas fa-pen"></em></span>
-                                        <span class="nk-menu-text">Syarat Sewa</span>
+
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">

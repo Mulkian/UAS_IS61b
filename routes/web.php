@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PemesanController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\JenisMobilController;
+use App\Http\Controllers\PemesananController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +47,11 @@ Route::post('/jenismobil/store/', [JenisMobilController::class, 'store']);
 Route::get('/jenismobil/edit/{id}', [JenisMobilController::class, 'edit']);
 Route::put('/jenismobil/{id}', [JenisMobilController::class, 'update']);
 Route::delete('/jenismobil/{id}', [JenisMobilController::class, 'destroy']);
+
+Route::get('/pemesanan', [PemesananController::class, 'index']);
+Route::get('/pemesanan/form/', [PemesananlController::class, 'create']);
+Route::post('/pemesanan/store/', [PemesananlController::class, 'store']);
+Route::get('/pemesanan/edit/{id}', [PemesananController::class, 'edit']);
+Route::put('/pemesanan/{id}', [PemesananController::class, 'update']);
+Route::delete('/pemesanan/{id}', [PemesananController::class, 'destroy']);
+
