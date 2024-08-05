@@ -35,6 +35,8 @@ class JenisMobilController extends Controller
         $jen->tahun_mobil = $request->tahun_mobil;
         $jen->warna_mobil = $request->warna_mobil;
         $jen->plat_nomor = $request->plat_nomor;
+        $jen->harga = $request->harga;
+
 
 
         $jen->save();
@@ -69,6 +71,7 @@ class JenisMobilController extends Controller
         $jen->tahun_mobil= $request->tahun_mobil;
         $jen->warna_mobil = $request->warna_mobil;
         $jen->plat_nomor= $request->plat_nomor;
+        $jen->harga= $request->harga;
 
         $jen->save();
 

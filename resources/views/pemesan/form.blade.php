@@ -22,6 +22,11 @@
                     <label for="exampleInputPassword1" class="form-label">Alamat Pemesan</label>
                     <input type="text" name="alamat_pemesan" class="form-control" id="exampleInputPassword1">
                 </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Foto</label>
+                    <input type="file" class="form-control" name="foto" accept="image/*">
+                </div>
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </form>
         </div>

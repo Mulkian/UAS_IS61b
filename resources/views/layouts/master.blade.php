@@ -50,13 +50,13 @@
 
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="pemesanan" class="nk-menu-link">
+                                    <a href="pemesanharian" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-cart"></em></span>
                                         <span class="nk-menu-text">Pemesanan Harian</span>
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
-                                    <a href="jenismobil" class="nk-menu-link">
+                                    <a href="pemesananpaket" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-cart"></em></span>
                                         <span class="nk-menu-text">Pemesanan paket</span>
                                     </a>
@@ -73,7 +73,7 @@
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
-                                    <a href="html/index-analytics.html" class="nk-menu-link">
+                                    <a href="/pengembalianmobil" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon fas fa-door-open"></em></span>
                                         <span class="nk-menu-text">Pengembalian Mobil</span>
                                     </a>

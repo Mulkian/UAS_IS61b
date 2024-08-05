@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('pengembalianmobil', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_sewa');
             $table->string('id_pesanan');
             $table->string('tgl_kembali');
+             $table->string('ganti_rugi');
             $table->enum('status', ['berhasil', 'gagal'])->default('berhasil');
             $table->timestamps();
         });

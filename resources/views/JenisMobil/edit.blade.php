@@ -28,6 +28,11 @@
                     <input type="text" name="plat_nomor" class="form-control"  value="{{$jen->plat_nomor}}" id="exampleInputPassword1">
                 </div>
 
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Harga</label>
+                    <input type="text" name="harga" class="form-control"  value="{{$jen->harga}}" id="exampleInputPassword1">
+                </div>
+
 
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </form>

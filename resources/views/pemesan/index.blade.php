@@ -18,6 +18,7 @@
                         <th>Nama Pemesan</th>
                         <th>No Handphone</th>
                         <th>Alamat Pemesan</th>
+                        <th>Foto KTP</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -28,6 +29,7 @@
                             <td>{{$item->nama_pemesan}}</td>
                             <td>{{$item->hp_pemesan}}</td>
                             <td>{{$item->alamat_pemesan}}</td>
+                            <td>{{$item->foto}}</td>
                             <td>
 
                                 <a href="pemesan/edit/1" class="btn btn-info btn-sm"><em class="fa fa-pencil-alt"></em></a>
@@ -51,6 +53,11 @@
                                                     <tr>
                                                         <td>Alamat Pemesan</td>
                                                         <th scope="row">{{$item->alamat_pemesan}}</th>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Foto KTP</td>
+                                                        <th scope="row"><img src="{{ asset('/foto/'.$item->foto) }}" width="100" alt=""></th>
                                                     </tr>
                                                     <!-- Add more details as necessary -->
                                                 </tbody>

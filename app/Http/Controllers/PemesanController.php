@@ -27,8 +27,10 @@ class PemesanController extends Controller
         $pem->nama_pemesan = $request->nama_pemesan;
         $pem->hp_pemesan= $request->hp_pemesan;
         $pem->alamat_pemesan = $request->alamat_pemesan;
-
+        $pem->foto = $request->foto->getClientOriginalName();
         $pem->save();
+
+        $request->foto->storeAs('foto',$request->foto->getClientOriginalName());
 
         return redirect('/pemesan/');
     }
@@ -52,7 +54,7 @@ class PemesanController extends Controller
     }
     public function destroy(string $id)
     {
-        
+
         $pem = Pemesan::find($id);
         $pem->delete();
 

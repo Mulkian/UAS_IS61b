@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('syaratsewa', function (Blueprint $table) {
+        Schema::create('pemesananpakets', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_sewa');
-            $table->string('tgl_sewa');
-            $table->string('id_pesanan');
+            $table->string('kode_pesanan');
+            $table->string('Tgl_pengembalian');
+            $table->string('tgl_pesanan');
+
+            $table->string('paket_dipilih');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('syaratsewa');
+        Schema::dropIfExists('pemesananpakets');
     }
 };
