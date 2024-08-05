@@ -5,7 +5,7 @@
 @section('content')
     <div class="card">
     <div class="card-body">
-            <form method="POST" action="/pemesan/store/">
+        <form method="POST" action="/pemesan/store/" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nama Pemesan</label>
@@ -24,8 +24,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Foto</label>
-                    <input type="file" class="form-control" name="foto" accept="image/*">
+                    <label for="exampleInputEmail1" class="form-label">Foto</label>
+                    <input type="file" accept="image/*" name="foto" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </form>

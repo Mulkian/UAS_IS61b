@@ -30,7 +30,8 @@ class PemesanController extends Controller
         $pem->foto = $request->foto->getClientOriginalName();
         $pem->save();
 
-        $request->foto->storeAs('foto',$request->foto->getClientOriginalName());
+        
+        $request->foto->move('foto',$request->foto->getClientOriginalName());
 
         return redirect('/pemesan/');
     }
