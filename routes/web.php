@@ -9,6 +9,7 @@ use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\PemesanharianController;
 use App\Http\Controllers\PemesanPaketController;
 use App\Http\Controllers\PengembalianMobilController;
+use App\Http\Controllers\TransaksiController;
 
 Auth::routes();
 
@@ -47,8 +48,6 @@ Route::put('/jenismobil/{id}', [JenisMobilController::class, 'update']);
 Route::delete('/jenismobil/{id}', [JenisMobilController::class, 'destroy']);
 
 // Rute untuk Pemesan Harian
-Route::resource('pemesanharian', PemesanharianController::class);
-Route::get('/pemesanharian/{id}', [PemesanHarianController::class, 'show'])->name('pemesanharian.show');
 
 
 // Rute untuk Jenis Mobil
@@ -67,3 +66,10 @@ Route::post('/pengembalianmobil/store/', [PengembalianMobilController::class, 's
 Route::get('/pengembalianmobil/edit/{id}', [PengembalianMobilController::class, 'edit']);
 Route::put('/pengembalianmobil/{id}', [PengembalianMobilController::class, 'update']);
 Route::delete('/pengembalianmobil/{id}', [PengembalianMobilController::class, 'destroy']);
+
+Route::get('/transaksi', [TransaksiController::class, 'index']);
+Route::get('/transaksi/form/', [TransaksiController::class, 'create']);
+Route::post('/transaksi/store/', [TransaksiController::class, 'store']);
+Route::get('/transaksi/edit/{id}', [TransaksiController::class, 'edit']);
+Route::put('/transaksi/{id}', [TransaksiController::class, 'update']);
+Route::delete('/transaksi/{id}', [TransaksiController::class, 'destroy']);

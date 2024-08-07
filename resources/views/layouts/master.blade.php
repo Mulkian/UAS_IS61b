@@ -29,7 +29,7 @@
                         <a href="#" class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
                     </div>
                     <div class="nk-sidebar-brand">
-                        <a href="html/index.html" class="logo-link nk-sidebar-logo">
+                        <a href="/" class="logo-link nk-sidebar-logo">
                             <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
                             <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                         </a>
@@ -48,17 +48,11 @@
                                         <span class="nk-menu-text">Pemesan</span>
                                     </a>
 
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
-                                    <a href="pemesanharian" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-cart"></em></span>
-                                        <span class="nk-menu-text">Pemesanan Harian</span>
-                                    </a>
-                                </li>
+
                                 <li class="nk-menu-item">
                                     <a href="pemesananpaket" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-cart"></em></span>
-                                        <span class="nk-menu-text">Pemesanan paket</span>
+                                        <span class="nk-menu-text">Pemesanan </span>
                                     </a>
 
                                 </li><!-- .nk-menu-item -->
@@ -77,7 +71,15 @@
                                         <span class="nk-menu-icon"><em class="icon fas fa-door-open"></em></span>
                                         <span class="nk-menu-text">Pengembalian Mobil</span>
                                     </a>
-                                </li><!-- .nk-menu-item -->
+                                </li>
+
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="/transaksi" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="icon fas fa-wallet"></em></span>
+                                    <span class="nk-menu-text">Transaksi</span>
+                                </a>
+                            </li><!-- .nk.nk-menu-item -->
                             </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->
                     </div><!-- .nk-sidebar-content -->
@@ -163,8 +165,8 @@
                                                         <span>AB</span>
                                                     </div>
                                                     <div class="user-info">
-                                                        <span class="lead-text">Abu Bin Ishtiyak</span>
-                                                        <span class="sub-text">info@softnio.com</span>
+                                                        <span class="lead-text">Admin</span>
+                                                        <span class="sub-text">Mulkian Akhfa</span>
                                                     </div>
                                                 </div>
                                             </div>

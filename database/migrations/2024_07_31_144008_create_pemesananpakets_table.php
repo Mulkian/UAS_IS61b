@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('pemesananpakets', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_pesanan');
+            $table->string('nama_pemesan');
             $table->string('Tgl_pengembalian');
             $table->string('tgl_pesanan');
 
             $table->string('paket_dipilih');
+            $table->string('mobil');
             $table->timestamps();
         });
     }

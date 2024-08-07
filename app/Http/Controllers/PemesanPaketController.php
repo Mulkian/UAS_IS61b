@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pemesananpaket;
-
+use App\Models\Pemesan;
+use App\Models\JenisMobil;
 class PemesanPaketController extends Controller
 {
     /**
@@ -14,7 +15,10 @@ class PemesanPaketController extends Controller
     {
         $nomor = 1;
         $pak = PemesananPaket::all();
-        return view('pemesananpaket.index',compact('nomor','pak'));
+        $pem = Pemesan::all();
+        $jen = JenisMobil::all();
+
+        return view('pemesananpaket.index',compact('nomor','pak','pem','jen'));
     }
 
     /**
@@ -22,7 +26,11 @@ class PemesanPaketController extends Controller
      */
     public function create()
     {
-        return view('pemesananpaket.form');
+        $pak = PemesananPaket::all();
+        $pem = Pemesan::all();
+        $jen = JenisMobil::all();
+
+        return view('pemesananpaket.form',compact('pak','pem','jen'));
     }
 
     /**$
@@ -32,12 +40,22 @@ class PemesanPaketController extends Controller
     {
         $pak = new PemesananPaket;
 
-        $pak->kode_pesanan = $request->kode_pesanan;
+        $pak->pemesans_id = $request->pemesans_id;
         $pak->tgl_pengembalian= $request->tgl_pengembalian;
         $pak->tgl_pesanan = $request->tgl_pesanan;
         $pak->paket_dipilih= $request->paket_dipilih;
+        $pak->jenis_mobils_id= $request->jenis_mobils_id;
 
         $pak->save();
+
+        $jen=JenisMobil::where('tipe_mobil',$request->jenis_mobils_id)->delete();
+
+
+
+
+
+
+
 
         return redirect('/pemesananpaket/');
     }
@@ -56,7 +74,9 @@ class PemesanPaketController extends Controller
     public function edit(string $id)
     {
         $pak = PemesananPaket::find($id);
-        return view('pemesananpaket.edit',compact('pak'));
+        $pem = Pemesan::all();
+        $jen = JenisMobil::all();
+        return view('pemesananpaket.edit',compact('pak','pem','jen'));
     }
 
     /**
@@ -66,11 +86,12 @@ class PemesanPaketController extends Controller
     {
 
         $pak = PemesananPaket::find($id);
-        $pak->kode_pesanan = $request->kode_pesanan;
+        $pak->pemesans_id = $request->nama_pemesan;
         $pak->tgl_pengembalian= $request->tgl_pengembalian;
         $pak->tgl_pesanan = $request->tgl_pesanan;
 
-        $pak->paket_dipilih= $request->paket_dipilih;;
+        $pak->paket_dipilih= $request->paket_dipilih;
+        $pak->jenis_mobils_id= $request->tipe_mobil;
 
         $pak->save();
 

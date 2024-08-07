@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengembalianmobil', function (Blueprint $table) {
+        Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->string('nama_pemesan');
-            $table->string('tgl_kembali');
+            $table->string('tipe_mobil');
+            $table->string('durasi_sewa');
+            $table->string('harga_sewa');
             $table->string('ganti_rugi');
-            $table->string('pembayaran');
-            $table->enum('status', ['berhasil', 'gagal'])->default('berhasil');
+            $table->string('total_bayar');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pengembalianmobil');
+        Schema::dropIfExists('transaksis');
     }
 };

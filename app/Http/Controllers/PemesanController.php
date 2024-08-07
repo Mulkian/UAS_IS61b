@@ -30,7 +30,7 @@ class PemesanController extends Controller
         $pem->foto = $request->foto->getClientOriginalName();
         $pem->save();
 
-        
+
         $request->foto->move('foto',$request->foto->getClientOriginalName());
 
         return redirect('/pemesan/');
@@ -46,10 +46,16 @@ class PemesanController extends Controller
     {
         //
         $pem = Pemesan::find($id);
+
+        // Update data lainnya
         $pem->nama_pemesan = $request->nama_pemesan;
         $pem->hp_pemesan = $request->hp_pemesan;
         $pem->alamat_pemesan = $request->alamat_pemesan;
+        $pem->foto = $request->foto;
         $pem->save();
+
+
+        $pem->foto->file('foto',$request->foto->getClientOriginalName());
 
         return redirect ('/pemesan/');
     }

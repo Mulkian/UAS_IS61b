@@ -9,21 +9,18 @@
                 @method('PUT')
                 @csrf
 
-                <div class="mb-3">
-                    <label for="id_pesanan" class="form-label">ID Pesanan</label>
-                    <input type="text" name="id_pesanan" class="form-control" value="{{ $bal->id_pesanan }}" id="id_pesanan" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="tgl_kembali" class="form-label">Tanggal Kembali</label>
-                    <input type="date" name="tgl_kembali" class="form-control" value="{{ $bal->tgl_kembali }}" id="tgl_kembali" required>
-                </div>
+              
 
 
 
                 <div class="mb-3">
                     <label for="ganti_rugi" class="form-label">Ganti Rugi</label>
                     <input type="number" name="ganti_rugi" class="form-control" value="{{ $bal->ganti_rugi }}" id="ganti_rugi" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="ganti_rugi" class="form-label">Pembayaran</label>
+                    <input type="text" name="pembayaran" class="form-control" value="{{ $bal->pembayaran }}" id="pembayaran" required>
                 </div>
 
                 <div class="mb-3">

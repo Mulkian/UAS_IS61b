@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pengembalianmobil;
+use App\Models\PengembalianMobil;
+use App\Models\Pemesan;
+use App\Models\Pemesananpaket;
 
 
 class PengembalianMobilController extends Controller
@@ -15,7 +17,9 @@ class PengembalianMobilController extends Controller
     {
         $nomor = 1;
         $bal = PengembalianMobil::all();
-        return view('pengembalianmobil.index',compact('nomor','bal'));
+        $pem = Pemesan::all();
+        $pak = Pemesananpaket::all();
+        return view('pengembalianmobil.index',compact('nomor','bal','pem','pak'));
     }
 
     /**
@@ -23,7 +27,11 @@ class PengembalianMobilController extends Controller
      */
     public function create()
     {
-        return view('pengembalianmobil.form');
+        $pak = PemesananPaket::where('paket_dipilih')->get();
+        $bal = PengembalianMobil::all();
+        $pem = Pemesan::all();
+        $pak = PemesananPaket::all();
+        return view('pengembalianmobil.form',compact('bal','pem','pak'));
     }
 
     /**$
@@ -33,10 +41,11 @@ class PengembalianMobilController extends Controller
     {
         $bal = new PengembalianMobil;
 
-        $bal->id_pesanan = $request->id_pesanan;
-        $bal->tgl_kembali= $request->tgl_kembali;
+        $bal->pemesananpakets_id = $request->pemesananpakets_id;
+        $bal->tgl_pengembalian= $request->tgl_pengembalian;
 
         $bal->ganti_rugi = $request->ganti_rugi;
+        $bal->pembayaran = $request->pembayaran;
         $bal->status= $request->status;
 
         $bal->save();
@@ -58,7 +67,9 @@ class PengembalianMobilController extends Controller
     public function edit(string $id)
     {
         $bal = PengembalianMobil::find($id);
-        return view('pengembalianmobil.edit',compact('bal'));
+        $pem = Pemesan::all();
+        $pak = Pemesananpaket::all();
+        return view('pengembalianmobil.edit',compact('bal','pem'));
     }
 
     /**
@@ -68,10 +79,9 @@ class PengembalianMobilController extends Controller
     {
 
         $bal = PengembalianMobil::find($id);
-        $bal->id_pesanan = $request->id_pesanan;
-        $bal->tgl_kembali= $request->tgl_kembali;
-        
+       
         $bal->ganti_rugi = $request->ganti_rugi;
+        $bal->pembayaran = $request->pembayaran;
         $bal->status= $request->status;
 
         $bal->save();

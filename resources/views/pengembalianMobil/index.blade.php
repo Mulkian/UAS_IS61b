@@ -9,10 +9,11 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>ID Pesanan</th>
+                        <th>NO</th>
+                        <th>Pemesan</th>
                         <th>Tanggal Kembali</th>
-
                         <th>Ganti Rugi</th>
+                        <th>Pembayaran</th>
                         <th>Status</th>
                         <th>Aksi</th>
                     </tr>
@@ -20,10 +21,11 @@
                 <tbody>
                     @foreach ($bal as $item)
                         <tr>
-                            <td>{{ $item->id_pesanan }}</td>
-                            <td>{{ $item->tgl_kembali }}</td>
-
+                            <td>{{$nomor++}}</td>
+                            <td>{{$item->pemesananpakets->pemesans->nama_pemesan}}</td>
+                            <td>{{ $item->pemesananpakets->tgl_pengembalian}}</td>
                             <td>{{ $item->ganti_rugi }}</td>
+                            <td>{{ $item->pembayaran }}</td>
                             <td>{{ $item->status }}</td>
                             <td>
                                 <a href="/pengembalianmobil/edit/ {{$item->id }}" class="btn btn-info btn-sm"><em class="fa fa-pencil-alt"></em></a>
@@ -37,16 +39,21 @@
                                             <table class="table">
                                                 <tbody>
                                                     <tr>
-                                                        <td>ID Pesanan</td>
-                                                        <th scope="row">{{$item->id_pesanan}}</th>
+                                                        <td>Pemesan</td>
+                                                        <th scope="row">{{$item->pemesananpakets->pemesans->nama_pemesan}}</th>
                                                     </tr>
                                                     <tr>
                                                         <td>Tanggal Pengembalian</td>
-                                                        <th scope="row">{{$item->tgl_kembali}}</th>
+                                                        <th scope="row">{{$item->pemesananpakets->tgl_pengembalian}}</th>
                                                     </tr>
                                                     <tr>
                                                         <td>Ganti Rugi</td>
                                                         <th scope="row">{{$item->ganti_rugi}}</th>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>Pembayaran</td>
+                                                        <th scope="row">{{$item->pembayaran}}</th>
                                                     </tr>
 
                                                     <tr>
@@ -70,7 +77,7 @@
                                                             <h5 class="modal-title">bahaya</h5>
                                                         </div>
                                                         <div class="modal-body">
-                                                            apa anda ingin menghapus Data pemesan {{$item->id_pesanan}}?
+                                                            apa anda ingin menghapus Data pemesan {{$item->nama_pemesan}}?
                                                         </div>
                                                         <div class="modal-footer bg-light">
                                                         <a href="pengembalianmobil" class="btn btn-secondary" data-dismiss="modal">Batal</a>

@@ -17,8 +17,8 @@
                         <th>No</th>
                         <th>Nama Pemesan</th>
                         <th>No Handphone</th>
-                        <th>Alamat Pemesan</th>
-                        <th>Foto KTP</th>
+                        <th>Alamat</th>
+                        <th>Foto Indentitas</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -30,10 +30,10 @@
                             <td>{{$item->hp_pemesan}}</td>
                             <td>{{$item->alamat_pemesan}}</td>
                             <td>
-                                <th scope="row"><img src="{{ asset('/foto/'.$item->foto) }}" width="100" alt=""></th>
+                                <img src="{{ asset('/foto/'.$item->foto) }}" width="100" alt="Foto KTP">
+                            </td>
                             <td>
-
-                                <a href="pemesan/edit/1" class="btn btn-info btn-sm"><em class="fa fa-pencil-alt"></em></a>
+                                <a href="pemesan/edit/{{$item->id}}" class="btn btn-info btn-sm"><em class="fa fa-pencil-alt"></em></a>
                                 <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#detail{{$item->id}}"><em class="fa fa-eye"></em></button>
                                 <div class="modal fade" tabindex="-1" id="detail{{$item->id}}">
                                     <div class="modal-dialog" role="document">
@@ -55,10 +55,9 @@
                                                         <td>Alamat Pemesan</td>
                                                         <th scope="row">{{$item->alamat_pemesan}}</th>
                                                     </tr>
-
                                                     <tr>
                                                         <td>Foto KTP</td>
-                                                        <th scope="row"><img src="{{ asset('/foto/'.$item->foto) }}" width="100" alt=""></th>
+                                                        <th scope="row"><img src="{{ asset('/foto/'.$item->foto) }}" width="100" alt="Foto KTP"></th>
                                                     </tr>
                                                     <!-- Add more details as necessary -->
                                                 </tbody>
@@ -74,28 +73,27 @@
                                                 <em class="icon ni ni-cross"></em>
                                             </a>
                                             <div class="modal-header">
-                                                <h5 class="modal-title">bahaya</h5>
+                                                <h5 class="modal-title">Peringatan</h5>
                                             </div>
                                             <div class="modal-body">
-                                                apa anda ingin menghapus Data pemesan {{$item->type_mobil}}?
+                                                Apakah Anda ingin menghapus data pemesan {{$item->nama_pemesan}}?
                                             </div>
                                             <div class="modal-footer bg-light">
-                                            <a href="pemesan" class="btn btn-secondary" data-dismiss="modal">Batal</a>
-                                            <form action="/pemesan/{{$item->id}}" method="post">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-primary">Hapus</button>
-                                            </form>
+                                                <a href="pemesan" class="btn btn-secondary" data-dismiss="modal">Batal</a>
+                                                <form action="/pemesan/{{$item->id}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-primary">Hapus</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
                                 </div>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5" class="text-center">Tidak Ada Data</td>
+                            <td colspan="6" class="text-center">Tidak Ada Data</td>
                         </tr>
                     @endforelse
                 </tbody>
