@@ -44,8 +44,8 @@ class PengembalianMobilController extends Controller
         $bal->pemesananpakets_id = $request->pemesananpakets_id;
         $bal->tgl_pengembalian= $request->tgl_pengembalian;
 
-        $bal->ganti_rugi = $request->ganti_rugi;
-        $bal->pembayaran = $request->pembayaran;
+        $bal->tipe_mobil= $request->jenis_mobils_id;
+
         $bal->status= $request->status;
 
         $bal->save();
@@ -79,9 +79,11 @@ class PengembalianMobilController extends Controller
     {
 
         $bal = PengembalianMobil::find($id);
-       
-        $bal->ganti_rugi = $request->ganti_rugi;
-        $bal->pembayaran = $request->pembayaran;
+        $bal->pemesananpakets_id = $request->pemesananpakets_id;
+        $bal->tgl_pengembalian= $request->tgl_pengembalian;
+
+
+
         $bal->status= $request->status;
 
         $bal->save();

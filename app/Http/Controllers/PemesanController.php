@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pemesan;
+use App\Models\Pemesananpaket;
+
 
 class PemesanController extends Controller
 {
@@ -11,7 +13,8 @@ class PemesanController extends Controller
     {
         $nomor = 1;
         $pem = Pemesan::all();
-        return view('pemesan.index',compact('nomor','pem'));
+        $pak = Pemesananpaket::all();
+        return view('pemesan.index',compact('nomor','pem','pak'));
     }
 
     public function create()
@@ -55,7 +58,9 @@ class PemesanController extends Controller
         $pem->save();
 
 
-        $pem->foto->file('foto',$request->foto->getClientOriginalName());
+
+
+
 
         return redirect ('/pemesan/');
     }

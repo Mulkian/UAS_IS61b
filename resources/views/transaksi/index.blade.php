@@ -18,11 +18,11 @@
                                             <th>No</th>
                                             <th>Pemesan</th>
                                             <th>Mobil</th>
-                                            <th>Durasi Sewa</th>
+                                            <th>Durasi/Hari</th>
                                             <th>Harga Sewa</th>
                                             <th>Ganti Rugi</th>
                                             <th>Total Bayar</th>
-                                            <th>Status</th>
+
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -31,57 +31,14 @@
 
                                         <tr>
                                             <td>{{$nomor++}}</td>
-                                        <td>{{$item->nama_pemesan}}</td>
+                                        <td>{{$item->pemesans->nama_pemesan}}</td>
                                         <td>{{$item->tipe_mobil}}</td>
-                                        <td>{{$item->durasi_sewa}}</td>
+                                        <td>{{$item->durasi_sewa  . ' Hari'}} </td>
                                         <td>{{$item->harga_sewa}}</td>
                                         <td>{{$item->ganti_rugi}}</td>
                                         <td>{{$item->total_bayar}}</td>
-                                        <td>{{$item->status}}</td>
 
-
-                                         <td>       <a href="transaksi/edit/{{$item->id}}" class="btn btn-info btn-sm"><em class="fa fa-pencil-alt"></em></a>
-                                            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#detail{{$item->id}}"><em class="fa fa-eye"></em></button>
-                                            <div class="modal fade" tabindex="-1" id="detail{{$item->id}}">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <a href="transaksi" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <em class="icon ni ni-cross"></em>
-                                                        </a>
-                                                        <table class="table">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>Nama Pemesan</td>
-                                                                    <th scope="row">{{$item->nama_pemesan}}</th>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Tipe Mobil</td>
-                                                                    <th scope="row">{{$item->tipe_mobil}}</th>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Durasi Sewa</td>
-                                                                    <th scope="row">{{$item->durasi_sewa}}</th>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <td>Ganti Rugi</td>
-                                                                    <th scope="row">{{$item->ganti_rugi}}</th>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Total Bayar</td>
-                                                                    <th scope="row">{{$item->total_bayar}}</th>
-                                                                </tr>
-
-                                                                <td>Status</td>
-                                                                <th scope="row">{{$item->status}}</th>
-                                                            </tr>
-
-                                                                <!-- Add more details as necessary -->
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <td>
                                             <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#hapus{{$item->id}}"><em class="fa fa-trash"></em></button>
                                             <div class="modal fade" tabindex="-1" id="hapus{{$item->id}}">
                                                 <div class="modal-dialog" role="document">
@@ -106,6 +63,11 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                        </td>
+
+
+
                                         </tr>
 
                                         @empty

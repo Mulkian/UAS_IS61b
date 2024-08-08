@@ -45,6 +45,7 @@ class PemesanPaketController extends Controller
         $pak->tgl_pesanan = $request->tgl_pesanan;
         $pak->paket_dipilih= $request->paket_dipilih;
         $pak->jenis_mobils_id= $request->jenis_mobils_id;
+        $pak->harga = $request->harga;
 
         $pak->save();
 

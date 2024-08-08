@@ -15,5 +15,6 @@ class JenisMobil extends Model
     {
         return $this->belongsTo(Pemesananpakets::class);
     }
+    
 }
 

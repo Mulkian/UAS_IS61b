@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaksi;
+use App\Models\Pemesananpaket;
+use App\Models\Pemesan;
+use App\Models\JenisMobil;
+use App\Models\Pengembalianmobil;
+
+
 class TransaksiController extends Controller
 {
     /**
@@ -11,9 +17,17 @@ class TransaksiController extends Controller
      */
     public function index()
     {
+
+
         $nomor = 1;
+        $pem = Pemesan::all();
+        $pak = PemesananPaket::all();
         $tra = Transaksi::all();
-        return view('transaksi.index',compact('nomor','tra'));
+        $jen = JenisMobil::all();
+        $bal = Pengembalianmobil::all();
+
+
+        return view('transaksi.index',compact('nomor','pem','pak','tra','jen','bal'));
     }
 
     /**
@@ -21,7 +35,11 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        return view('transaksi.form');
+
+        $tra = Transaksi::all();
+        $pem = Pemesan::all();
+        $pak = Pemesananpaket::all();
+        return view('transaksi.form',compact('tra','pem','pak'));
     }
 
     /**
@@ -31,13 +49,13 @@ class TransaksiController extends Controller
     {
         $tra = new Transaksi;
 
-        $tra->nama_pemesan = $request->nama_pemesan;
-        $tra->tipe_mobil = $request->tipe_mobil;
-        $tra->durasi_sewa = $request->durasi_sewa;
-        $tra->harga_sewa = $request->harga_sewa;
+        $tra->pemesans_id = $request->pemesananpakets_id;
+        $tra->tipe_mobil = $request->jenis_mobils_id;
+        $tra->durasi_sewa = $request->paket_dipilih;
+        $tra->harga_sewa = $request->harga;
         $tra->ganti_rugi = $request->ganti_rugi;
         $tra->total_bayar = $request->total_bayar;
-        $tra->status = $request->status;
+
         $tra->save();
 
         return redirect('/transaksi/');
@@ -58,7 +76,8 @@ class TransaksiController extends Controller
     public function edit(string $id)
     {
         $tra = Transaksi::find($id);
-        return view('transaksi.edit',compact('tra'));
+        $pem = Pemesan::all();
+        return view('transaksi.edit',compact('tra','pem'));
     }
 
     /**
@@ -67,13 +86,13 @@ class TransaksiController extends Controller
     public function update(Request $request, string $id)
     {
         $tra = Transaksi::find($id);
-        $tra->nama_pemesan = $request->nama_pemesan;
+        $tra->pemesans_id = $request->nama_pemesan;
         $tra->tipe_mobil = $request->tipe_mobil;
         $tra->durasi_sewa = $request->durasi_sewa;
         $tra->harga_sewa = $request->harga_sewa;
         $tra->ganti_rugi = $request->ganti_rugi;
         $tra->total_bayar = $request->total_bayar;
-        $tra->status = $request->status;
+
 
         $tra->save();
 

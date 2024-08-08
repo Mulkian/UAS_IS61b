@@ -10,7 +10,13 @@
                 @csrf
                 <div class="mb-3">
                     <label for="nama_pemesan" class="form-label">Nama Pemesan</label>
-                    <input type="text" name="nama_pemesan" class="form-control" value="{{$tra->nama_pemesan}}" id="nama_pemesan" required>
+                    <select name="nama_pemesan" class="form-control" id="">
+                        <option value="">-Nama Pemesan-</option>
+                        @foreach ($pem as $item)
+                            <option value="{{$item->id}}">{{$item->kode}} - {{$item->nama_pemesan}}</option>
+                        @endforeach
+
+                    </select>
                 </div>
 
                 <div class="mb-3">

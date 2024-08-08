@@ -25,4 +25,9 @@ class Pemesananpaket extends Model
     {
         return $this->hasMany(Pengembalianmobil::class);
     }
+
+    public function transaksis(): BelongsTo
+    {
+        return $this->belongsTo(Transaksi::class);
+    }
 }

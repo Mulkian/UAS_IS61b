@@ -5,7 +5,7 @@
 @section('content')
                 <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Pemesanan Paket</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Pemesanan </h6>
                         </div>
 
 
@@ -20,8 +20,9 @@
                                             <th>Pemesan</th>
                                             <th>Tgl Pemesanan</th>
                                             <th>Tgl Kembali</th>
-                                            <th>Paket dipilih</th>
+                                            <th>Durasi/Hari</th>
                                             <th>Mobil</th>
+                                            <th>Harga</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -36,9 +37,9 @@
                                         <td>{{$item->tgl_pengembalian}}</td>
 
 
-                                        <td>{{$item->paket_dipilih}}</td>
+                                        <td>{{$item->paket_dipilih . ' Hari' }}</td>
                                         <td>{{$item->jenis_mobils_id ?? 'Data Tidak Tersedia'}}</td>
-
+                                        <td>{{$item->harga}}</td>
 
 
                                          <td>       <a href="pemesananpaket/edit/{{$item->id}}" class="btn btn-info btn-sm"><em class="fa fa-pencil-alt"></em></a>

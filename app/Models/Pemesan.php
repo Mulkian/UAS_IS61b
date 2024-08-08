@@ -19,4 +19,9 @@ class Pemesan extends Model
     {
         return $this->belongsTo(Pengembalianmobil::class);
     }
+
+    public function transaksis(): BelongsTo
+    {
+        return $this->hasMany(Transaksi::class);
+    }
 }

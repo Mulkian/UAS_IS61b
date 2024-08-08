@@ -12,8 +12,8 @@
                         <th>NO</th>
                         <th>Pemesan</th>
                         <th>Tanggal Kembali</th>
-                        <th>Ganti Rugi</th>
-                        <th>Pembayaran</th>
+                        <th>Tipe Mobil</th>
+
                         <th>Status</th>
                         <th>Aksi</th>
                     </tr>
@@ -24,8 +24,8 @@
                             <td>{{$nomor++}}</td>
                             <td>{{$item->pemesananpakets->pemesans->nama_pemesan}}</td>
                             <td>{{ $item->pemesananpakets->tgl_pengembalian}}</td>
-                            <td>{{ $item->ganti_rugi }}</td>
-                            <td>{{ $item->pembayaran }}</td>
+
+                            <td>{{ $item->tipe_mobil }}</td>
                             <td>{{ $item->status }}</td>
                             <td>
                                 <a href="/pengembalianmobil/edit/ {{$item->id }}" class="btn btn-info btn-sm"><em class="fa fa-pencil-alt"></em></a>
@@ -46,15 +46,14 @@
                                                         <td>Tanggal Pengembalian</td>
                                                         <th scope="row">{{$item->pemesananpakets->tgl_pengembalian}}</th>
                                                     </tr>
-                                                    <tr>
-                                                        <td>Ganti Rugi</td>
-                                                        <th scope="row">{{$item->ganti_rugi}}</th>
-                                                    </tr>
 
                                                     <tr>
-                                                        <td>Pembayaran</td>
-                                                        <th scope="row">{{$item->pembayaran}}</th>
+                                                        <td>Tipe Mobil</td>
+                                                        <th scope="row">{{$item->tipe_mobil}}</th>
                                                     </tr>
+
+
+
 
                                                     <tr>
                                                         <td>Status</td>
